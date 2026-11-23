@@ -16,6 +16,7 @@ builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<IAgentService, AgentService>();
 builder.Services.AddScoped<IAgentRepository, AgentRepository>();
 builder.Services.AddScoped<MySqlGDSDB>();
+builder.Configuration.AddUserSecrets<Program>();
 
 var masterConnection = builder.Configuration.GetConnectionString("SE_REDIS_GDS_MASTER");
 if (string.IsNullOrWhiteSpace(masterConnection))
