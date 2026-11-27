@@ -1,0 +1,10 @@
+
+
+public enum SA_TYPE
+        {
+            AGENT = 1,
+            CORPORATE = 2,
+            API = 3,
+            MICROSITE = 4,
+            TRAVELYAARI = 5
+        }

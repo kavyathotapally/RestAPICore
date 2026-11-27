@@ -1,5 +1,5 @@
 ﻿
-using RestAPICore.Auth;
+using RestAPICore.Common;
 using RestAPICore.Entities;
 using System.Collections.Generic;
 using System.Data;

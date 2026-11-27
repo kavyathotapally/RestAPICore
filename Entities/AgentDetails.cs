@@ -12,8 +12,11 @@ namespace RestAPICore.Entities
         {
             _redisConnectionFactory = redisConnectionFactory ?? throw new ArgumentNullException(nameof(redisConnectionFactory));
         }
+        public AgentDetails() : base("agent1")
+        {
 
-        
+        }
+
 
         public class AgentFields
         {

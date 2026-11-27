@@ -1,6 +1,7 @@
-using RestAPICore.Auth;
+using RestAPICore.Common;
 using RestAPICore.Models;
 using RestAPICore.Repositories;
+using RestAPICore.Repositories.AuthRepo;
 
 namespace RestAPICore.Services
 {

@@ -1,4 +1,4 @@
-﻿namespace RestAPICore.Auth
+﻿namespace RestAPICore.Common
 {
      class Authorization
     {

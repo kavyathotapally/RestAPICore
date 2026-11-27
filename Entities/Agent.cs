@@ -39,6 +39,22 @@ namespace RestAPICore.Entities
                 return false;
             }
         }
+
+        public static int getSubAgentId(string client)
+        {
+            string[] parts = client.Split('-');
+            if (parts[1]=="S")
+            {
+                return Convert.ToInt32(parts[0]);
+            }else
+            {
+                int agentUserId= Convert.ToInt32(parts[0]);
+                AgentUserDetails eAgentUserDetails = new AgentUserDetails();
+                var details = eAgentUserDetails.getAgentUserDetails(agentUserId);
+                int subAgentId = details.sub_agent_id;
+                return subAgentId;
+            }
+        }
     }
 
 

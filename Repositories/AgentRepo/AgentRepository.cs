@@ -1,5 +1,5 @@
 ﻿
-using RestAPICore.Auth;
+using RestAPICore.Common;
 using RestAPICore.DB;
 using RestAPICore.Entities;
 using StackExchange.Redis;
@@ -53,12 +53,8 @@ namespace RestAPICore.Repositories
             param.Add("USER_TYPE", clientType);
             param.Add("SUB_AGENT_ID", userSubAgentId);
             //  int? userId = null;
-            DataSet ds= _mysql.execute(
-                "SP_VALIDATE_AGENT_AND_USER_CREDENTIALS_V2",
-                param,
-                CommandType.StoredProcedure);
+            DataSet ds= _mysql.execute("SP_VALIDATE_AGENT_AND_USER_CREDENTIALS_V2", param, CommandType.StoredProcedure);
             
-
             bool success = false;
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {

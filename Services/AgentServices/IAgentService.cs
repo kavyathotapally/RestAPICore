@@ -1,6 +1,6 @@
 ﻿
 // Add the namespace containing your Agent entities
-using RestAPICore.Auth;
+using RestAPICore.Common;
 using RestAPICore.Entities;
 using RestAPICore.Models.Requests;
 using System;

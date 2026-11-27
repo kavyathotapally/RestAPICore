@@ -3,7 +3,8 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace RestAPICore.Auth
+namespace RestAPICore.Common
+
 {
     public class AccessToken
     {

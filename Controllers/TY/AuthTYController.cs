@@ -1,16 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using RestAPICore.Controllers.BaseControllers;
 using RestAPICore.Models;
 using RestAPICore.Services;
 
-namespace RestAPICore.Controllers
+namespace RestAPICore.Controllers.TYControllers
 {
-     
-    public class AuthOTAController : OtaControllerBase
+   
+    public class AuthTYController : TYControllerBase
     {
         private readonly IAuthService _authService;
 
-        public AuthOTAController(IAuthService authService)
+        public AuthTYController(IAuthService authService)
         {
             _authService = authService;
         }

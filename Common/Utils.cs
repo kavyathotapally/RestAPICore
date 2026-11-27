@@ -1,30 +1,22 @@
-using Microsoft.AspNetCore.Mvc;
-using RestAPICore.Controllers.BaseControllers;
+﻿namespace RestAPICore.Common
 
-//using RestAPICore.Models;
-using RestAPICore.Models.Requests;
-using RestAPICore.Models.Response;
-using RestAPICore.Services;
-
-namespace RestAPICore.Controllers
 {
-   
-    public class AuthAgentController : AgentControllerBase
+    public class Utils
     {
-        private readonly IAgentService _agentService;
-
-        public AuthAgentController(IAgentService agentService)
+        public static DateTime getNow()
         {
-            _agentService = agentService;
+            DateTime ISTDate = DateTime.UtcNow + new TimeSpan(hours: 5, minutes: 30, seconds: 0);
+            return ISTDate;
+        }
+        public static string toHexString(int intValue, int placeCount = 4)
+        {
+            return intValue.ToString('X' + placeCount.ToString()).ToUpper();
+        }
+        public static int HextoInt(string hexValue)
+        {
+            return int.Parse(hexValue, System.Globalization.NumberStyles.HexNumber);
         }
 
-        [HttpPost("Auth")]
-        public async Task<AuthAgentResponse> Post(AgentAuthRequest request)
-        {
-            int? userId = null;
-            Models.Response.AuthAgentResponse authAgentResponse = _agentService.checkAgentUserCredentials(request);
-            return authAgentResponse;
-        }
 
         private string MD5(string password)
         {
@@ -51,3 +43,4 @@ namespace RestAPICore.Controllers
         }
     }
 }
+
